@@ -5,7 +5,6 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "22"
     },
-    "ghcr.io/devcontainers/features/composer:1": {},
     "ghcr.io/devcontainers/features/postgres-client:1": {}
   },
   "forwardPorts": [8000],
@@ -15,5 +14,5 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "php --version && composer --version && node --version && npm --version"
+  "postCreateCommand": "curl -fsSL https://getcomposer.org/installer -o /tmp/composer-setup.php && sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer && rm /tmp/composer-setup.php && php --version && composer --version && node --version && npm --version"
 }
