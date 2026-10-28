@@ -1,0 +1,19 @@
+{
+  "name": "TNPDS-EWS Laravel Development",
+  "image": "mcr.microsoft.com/devcontainers/php:1-8.3-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/composer:1": {},
+    "ghcr.io/devcontainers/features/postgres-client:1": {}
+  },
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "TNPDS-EWS Laravel app",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "php --version && composer --version && node --version && npm --version"
+}
